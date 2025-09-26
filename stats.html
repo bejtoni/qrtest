@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>QR Scan Count</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; }
+    .card { padding:2rem; border:1px solid #ddd; border-radius:12px; text-align:center; }
+    h1 { margin:0 0 0.5rem 0; font-size:2rem; }
+    .num { font-size:3rem; font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>QR scans</h1>
+    <div id="n" class="num">…</div>
+  </div>
+  <script>
+    fetch('https://api.countapi.xyz/get/kismetatelier/qr-main')
+      .then(r => r.json())
+      .then(d => { document.getElementById('n').textContent = d.value ?? 0; })
+      .catch(() => { document.getElementById('n').textContent = 'Error'; });
+  </script>
+</body>
+</html>
