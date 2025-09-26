@@ -1,32 +1,25 @@
-<!DOCTYPE html>
+
+
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Redirecting…</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      (async () => {
-        try {
-          // Increment a free counter (namespace/key can be anything)
-          await fetch("https://api.countapi.xyz/hit/kismetatelier/qr-main", {
-            mode: "no-cors",
-          });
-        } catch (e) {
-          /* ignore */
-        }
-        // Small delay so the request fires, then bounce to Linktree
-        setTimeout(() => {
-          location.replace("https://linktr.ee/kismetatelier");
-        }, 10);
-      })();
-    </script>
-    <noscript>
-      <!-- If JS is off, just go to Linktree (won't count) -->
-      <meta
-        http-equiv="refresh"
-        content="0;url=https://linktr.ee/kismetatelier"
-      />
-    </noscript>
-  </head>
-  <body></body>
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+  (async () => {
+    try {
+      // increment counter (namespace/key are path parts; choose your own)
+      await fetch('https://hitcounter.dev/track/kismetatelier/qr-main', { mode: 'no-cors' });
+    } catch (e) {}
+    setTimeout(() => {
+      location.replace('https://linktr.ee/kismetatelier');
+    }, 100);
+  })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://linktr.ee/kismetatelier" />
+  </noscript>
+</head>
+<body>Redirecting…</body>
 </html>
